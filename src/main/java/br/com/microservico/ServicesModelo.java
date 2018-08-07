@@ -1,5 +1,7 @@
 package br.com.microservico;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +26,7 @@ public class ServicesModelo {
 	
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String findAll() {
-		return "ok";
+	public ResponseEntity<?> findAll() {
+		return new ResponseEntity("",HttpStatus.OK);
 	}
 }
